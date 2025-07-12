@@ -46,6 +46,3 @@ FAISS index will be created in vector_store/
 - Python, LangChain, OpenAI
 - FAISS (vector DB), Streamlit
 - FastAPI (backend), PyPDF / Text loaders
-
-
-
