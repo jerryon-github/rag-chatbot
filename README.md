@@ -1,92 +1,48 @@
-# 📊 Customer Churn Prediction Dashboard
+# 💬 RAG Chatbot with Context Memory
 
-A machine learning-powered dashboard for predicting customer churn using a Random Forest classifier. Built with Streamlit and designed for quick business insights.
+A conversational AI chatbot using Retrieval-Augmented Generation (RAG) with memory. Built with LangChain, OpenAI, FAISS, and Streamlit.
 
 ---
 
-## 🔧 Tech Stack
+## 🧠 Features
 
-- **Python**  
-- **Pandas** for data handling  
-- **Scikit-learn** for machine learning  
-- **Joblib** for model persistence  
-- **Streamlit** for interactive UI
+- Context-aware Q&A from custom documents
+- Uses FAISS vector index for fast semantic search
+- Dual interface: Streamlit (frontend) + FastAPI (backend)
+- LangChain memory for conversational flow
 
 ---
 
 ## 📁 Project Structure
 
-```
-customer_churn_dashboard/
-├── data/
-│   └── churn_data.csv              # Clean dataset
-├── model/
-│   └── churn_model.pkl             # Trained model
-│   └── feature_list.pkl            # Feature schema
-├── notebooks/
-│   └── modeling.ipynb              # Model training notebook
+rag-chatbot/
+├── data/docs/ # Your document PDFs or text files
 ├── src/
-│   └── churn_dashboard.py          # Streamlit app
-├── requirements.txt
-├── LICENSE
-├── README.md
-```
+│ ├── chatbot_app.py # Streamlit UI
+│ └── api.py # FastAPI backend
+├── vector_store/ # FAISS index stored here
 
 ---
 
-## 🚀 How to Run Locally
+## 🚀 How to Run
 
-1. **Clone this repository**  
-   ```bash
-   git clone https://github.com/yourusername/customer-churn-dashboard.git
-   cd customer-churn-dashboard
-   ```
+### Install dependencies
+bash
+pip install -r requirements.txt
 
-2. **Install dependencies**  
-   ```bash
-   pip install -r requirements.txt
-   ```
+Start the chatbot (Streamlit UI)
 
-3. **Train the model (if not already saved)**  
-   Open `notebooks/modeling.ipynb` and run all cells.
+streamlit run src/chatbot_app.py
+Optional: Start backend API
+uvicorn src.api:app --reload
 
-4. **Run the Streamlit dashboard**  
-   ```bash
-   streamlit run src/churn_dashboard.py
-   ```
+📚 Data
+Store your PDFs or .txt files in data/docs/
+FAISS index will be created in vector_store/
 
----
+🛠️ Tech Stack
+Python, LangChain, OpenAI
 
-## 🧪 Sample Features Used
+FAISS (vector DB), Streamlit
 
-- Gender (Male/Female)  
-- Age (numerical)  
-- Monthly Charges  
-- Tenure (in months)  
-- Contract Type (Month-to-month, One year, Two year)
-
----
-
-## 🌍 Deployment (Streamlit Cloud)
-
-To deploy live:
-1. Push this repo to your GitHub.
-2. Go to [https://streamlit.io/cloud](https://streamlit.io/cloud)
-3. Link your GitHub and select this repo.
-4. Set the main app file to: `src/churn_dashboard.py`
-
-✅ Your app will be live on the web!
-
----
-
-## 📄 License
-
-This project is licensed under the [MIT License](LICENSE).  
-You are free to use, modify, and distribute it with proper attribution.
-
----
-
-## 👤 Author
-
-[Jerry]  
-[https://github.com/jerryon-github]
+FastAPI (backend), PyPDF / Text loaders

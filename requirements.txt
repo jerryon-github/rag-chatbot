@@ -1,5 +1,9 @@
-scikit-learn==1.2.2
-pandas
+langchain
+openai
+faiss-cpu
 streamlit
-joblib
-jupyter
+fastapi
+uvicorn
+tiktoken
+pypdf
+python-dotenv
