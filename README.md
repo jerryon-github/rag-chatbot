@@ -14,35 +14,38 @@ A conversational AI chatbot using Retrieval-Augmented Generation (RAG) with memo
 ---
 
 ## 📁 Project Structure
-
+```
 rag-chatbot/
 ├── data/docs/ # Your document PDFs or text files
 ├── src/
 │ ├── chatbot_app.py # Streamlit UI
 │ └── api.py # FastAPI backend
 ├── vector_store/ # FAISS index stored here
-
+```
 ---
 
 ## 🚀 How to Run
 
 ### Install dependencies
-bash
+```bash
 pip install -r requirements.txt
+```
 
 Start the chatbot (Streamlit UI)
-
+```
 streamlit run src/chatbot_app.py
 Optional: Start backend API
 uvicorn src.api:app --reload
+```
 
-📚 Data
+### 📚 Data
 Store your PDFs or .txt files in data/docs/
 FAISS index will be created in vector_store/
 
-🛠️ Tech Stack
-Python, LangChain, OpenAI
+### 🛠️ Tech Stack
+- Python, LangChain, OpenAI
+- FAISS (vector DB), Streamlit
+- FastAPI (backend), PyPDF / Text loaders
 
-FAISS (vector DB), Streamlit
 
-FastAPI (backend), PyPDF / Text loaders
+
